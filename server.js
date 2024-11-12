@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import url from "url";
 
-const port = 8000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 const __filename = url.fileURLToPath(import.meta.url)
@@ -20,6 +20,6 @@ app.get("/",(req,res)=>{
 })
 
 
-app.listen(port,()=>{
-    console.log("I am on http://localhost:8000")
+app.listen(PORT,()=>{
+    console.log(`I am on http://localhost:${PORT}`)
 })
